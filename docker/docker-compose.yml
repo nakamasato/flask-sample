@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  uwsgi:
+    build:
+      context: ../src
+    env_file:
+      - env_file/env.mysql
+      - env_file/env.app
+    volumes:
+      - ../src:/var/www
+    command: >
+      bash -c "sleep 10
+      && uwsgi --ini /var/www/uwsgi.ini"
+    depends_on:
+      - mysql
+
+  nginx:
+    image: nginx:1.19.6-alpine
+    volumes:
+      - /tmp/nginx_log:/var/log/nginx
+      - ../nginx/nginx.dev.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - uwsgi
+    ports:
+      - "5000:80"
+
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - ./mysql/schema/user.sql:/docker-entrypoint-initdb.d/01_schema_user.sql
+      - ./mysql/data/user.sql:/docker-entrypoint-initdb.d/11_data_user.sql
+      - ./mysql/conf.d/:/etc/mysql/conf.d/
+    env_file:
+      - env_file/env.mysql
+    ports:
+      - 3306:3306

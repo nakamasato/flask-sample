@@ -6,11 +6,19 @@
     ```json
     {"status":"healthy"}
     ```
-1. GET /users?user_id=1
+1. GET /users/1
     ```json
     {
         "id": 1,
         "name": "test_user1"
+    }
+    ```
+1. POST /users/
+    ```
+    curl -X POST -H "Content-Type: application/json" -d '{"name": "linuxize", "email": "linuxize@example.com"}' localhost:5000/users
+    {
+      "id": 7,
+      "name": "linuxize"
     }
     ```
 
@@ -21,7 +29,7 @@
 1. Run MySQL
 
     ```
-    docker-compose -f docker/docker-compose.yml up mysql -d
+    docker-compose -f docker/docker-compose.yml up -d mysql
     ```
 
 1. Local env
@@ -34,13 +42,12 @@
     FLASK_APP=sample FLASK_ENV=development flask run
     ```
 
-1. Curl
+1. Check health
 
     ```
     curl localhost:5000/health
     {"status":"healthy"}
     ```
-
 ### With Docker
 
 1. Docker Compose

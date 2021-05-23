@@ -31,6 +31,15 @@ def get_user(user_id):
         return jsonify({}), 500
 
 
+def post_user(name, email):
+    user = User(name, email)
+    db_session.add(user)
+    db_session.commit()
+    response = make_response(user)
+    response.headers['Location'] = '/api/users/%d' % user.id
+    return response, 201
+
+
 def make_response(user):
     return jsonify({
         "id": user.id,

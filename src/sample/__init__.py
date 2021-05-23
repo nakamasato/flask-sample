@@ -14,11 +14,14 @@ def create_app(test_config=None):
     def healthcheck():
         return api.healthcheck()
 
-    @app.route('/users')
-    def get_user():
-        user_id = request.args.get('user_id', default=1, type=int)
+    @app.route('/users/<int:user_id>', methods=["GET"])
+    def get_user(user_id=None):
         return api.get_user(user_id)
 
+    @app.route('/users', methods=['POST'])
+    def post_user():
+        payload = request.json
+        return api.post_user(payload.get('name'), payload.get('email'))
     return app
 
 

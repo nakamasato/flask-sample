@@ -49,6 +49,21 @@
     curl localhost:5000/health
     {"status":"healthy"}
     ```
+
+1. Run test
+
+    ```
+    cd src
+    python -m pytest
+    ==================================================== test session starts ====================================================
+    platform darwin -- Python 3.7.8, pytest-6.2.1, py-1.10.0, pluggy-0.13.1
+    rootdir: /Users/masato-naka/repos/nakamasato/flask-test/src
+    collected 3 items
+
+    tests/test_api.py ...                                                                                                 [100%]
+
+    ===================================================== 3 passed in 0.06s =====================================================
+    ```
 ### With Docker
 
 1. Docker Compose

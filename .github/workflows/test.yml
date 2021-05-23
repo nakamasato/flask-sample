@@ -9,9 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.BOT_ACCESS_TOKEN }}
-          submodules: true
 
       - name: Start mysql
         run: |

@@ -1,5 +1,6 @@
 # flask sample app
 
+![](diagram.drawio.svg)
 ## APIs
 
 1. GET /health
@@ -14,11 +15,11 @@
     }
     ```
 1. POST /users/
-    ```
-    curl -X POST -H "Content-Type: application/json" -d '{"name": "linuxize", "email": "linuxize@example.com"}' localhost:5000/users
+    ```json
+    curl -X POST -H "Content-Type: application/json" -d '{"name": "naka", "email": "naka@example.com"}' localhost:5000/users
     {
       "id": 7,
-      "name": "linuxize"
+      "name": "naka"
     }
     ```
 

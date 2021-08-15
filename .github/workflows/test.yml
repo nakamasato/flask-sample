@@ -10,10 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Start mysql
-        run: |
-          docker-compose -f docker/docker-compose.yml up -d mysql
-
       - name: Set up Python
         uses: actions/setup-python@v1
         with:

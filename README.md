@@ -1,6 +1,10 @@
 # flask sample app
 
 ![](diagram.drawio.svg)
+
+## Versions
+- Python: 3.9
+- Flask: 1.1.2
 ## APIs
 
 1. GET /health
@@ -23,6 +27,11 @@
     }
     ```
 
+## Directory
+
+- `sample/`, a Python package containing your application code and files.
+- `tests/`, a directory containing test modules.
+- `venv/`, a Python virtual environment where Flask and other dependencies are installed.
 ## Local Development
 
 ### With Local Python
@@ -38,7 +47,6 @@
     ```
     python3 -m venv venv
     . venv/bin/activate
-    cd src
     pip install -r sample/requirements.txt
     FLASK_APP=sample FLASK_ENV=development flask run
     ```
@@ -53,16 +61,15 @@
 1. Run test
 
     ```
-    cd src
     python -m pytest
-    ==================================================== test session starts ====================================================
-    platform darwin -- Python 3.7.8, pytest-6.2.1, py-1.10.0, pluggy-0.13.1
-    rootdir: /Users/masato-naka/repos/nakamasato/flask-test/src
+    ================================================================================= test session starts ==================================================================================
+    platform darwin -- Python 3.9.0, pytest-6.2.1, py-1.10.0, pluggy-0.13.1
+    rootdir: /Users/masato-naka/repos/nakamasato/flask-test
     collected 3 items
 
-    tests/test_api.py ...                                                                                                 [100%]
+    tests/test_api.py ...                                                                                                                                                            [100%]
 
-    ===================================================== 3 passed in 0.06s =====================================================
+    ================================================================================== 3 passed in 0.08s ===================================================================================
     ```
 ### With Docker
 

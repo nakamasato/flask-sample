@@ -3,17 +3,20 @@ version: '3.8'
 services:
   uwsgi:
     build:
-      context: ../src
+      context: ..
     env_file:
       - env_file/env.mysql
       - env_file/env.app
     volumes:
-      - ../src:/var/www
-    command: >
-      bash -c "sleep 10
-      && uwsgi --ini /var/www/uwsgi.ini"
+      - ..:/var/www
+    command: ["uwsgi", "--ini", "/var/www/uwsgi.ini"]
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3031/health"]
+      timeout: 10s
+      retries: 5
 
   nginx:
     image: nginx:1.19.6-alpine
@@ -35,3 +38,7 @@ services:
       - env_file/env.mysql
     ports:
       - 3306:3306
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      timeout: 10s
+      retries: 5

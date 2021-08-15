@@ -1,6 +1,10 @@
 # flask sample app
 
 ![](diagram.drawio.svg)
+
+## Versions
+- Python: 3.9
+- Flask: 1.1.2
 ## APIs
 
 1. GET /health

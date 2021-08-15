@@ -1,0 +1,7 @@
+nginx
+README.md
+Makefile
+.github
+.pytest_cache
+docker
+venv

@@ -1,16 +1,20 @@
 import pytest
-import requests
 import os
-import socket
 import sys
 import pymysql
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
+sys.path.insert(
+    0,
+    os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+)
 
 
 @pytest.fixture(scope="session")
 def docker_compose_file(pytestconfig):
-    return os.path.join(str(pytestconfig.rootdir), "tests", "docker-compose.yml")
+    return os.path.join(
+        str(pytestconfig.rootdir),
+        "tests",
+        "docker-compose.yml"
+    )
 
 
 def is_mysql_ready(host, port):

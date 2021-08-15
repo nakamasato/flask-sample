@@ -1,7 +1,5 @@
 import json
-import requests
 import pytest
-import pymysql
 
 
 @pytest.fixture

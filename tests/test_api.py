@@ -1,7 +1,21 @@
 import json
+import requests
+import pytest
+import pymysql
 
 
-def test_get_users(app, client):
+@pytest.fixture
+def app(mysql_service):
+    from sample import app as sample_app
+    yield sample_app
+
+
+@pytest.fixture
+def client(app, mysql_service):
+    return app.test_client()
+
+
+def test_get_users(app, client, mysql_service):
     res = client.get('/users/1')
     assert res.status_code == 200
     expected = {
@@ -11,7 +25,7 @@ def test_get_users(app, client):
     assert expected == json.loads(res.get_data(as_text=True))
 
 
-def test_post_users(app, client):
+def test_post_users(app, client, mysql_service):
     res = client.post(
         '/users',
         data=json.dumps(dict(email='email@mail.com', name='user')),
@@ -22,7 +36,7 @@ def test_post_users(app, client):
     assert expected_user_name == json.loads(res.get_data(as_text=True))["name"]
 
 
-def test_health(app, client):
+def test_health(app, client, mysql_service):
     res = client.get('/health')
     assert res.status_code == 200
     expected = {

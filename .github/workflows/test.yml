@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - 'sample/**'
+      - .github/workflows/test.yml
 
 jobs:
   unittest:

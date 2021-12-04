@@ -85,3 +85,7 @@
     curl localhost:5000/health
     {"status":"healthy"}
     ```
+
+## Test
+
+- coverage: https://app.codecov.io/gh/nakamasato/flask-sample

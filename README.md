@@ -67,9 +67,9 @@
     rootdir: /Users/masato-naka/repos/nakamasato/flask-sample
     plugins: cov-3.0.0
     collected 3 items
-    
+
     tests/test_api.py ...                                                                                                                                                                             [100%]
-    
+
     =========================================================================================== 3 passed in 0.06s ===========================================================================================
     ```
 ### With Docker
@@ -89,4 +89,4 @@
 
 ## Test
 
-- coverage: https://app.codecov.io/gh/nakamasato/flask-sample
+- coverage: [codecov](https://app.codecov.io/) (https://app.codecov.io/gh/nakamasato/flask-sample)

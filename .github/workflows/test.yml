@@ -4,6 +4,10 @@ on:
     paths:
       - 'sample/**'
       - .github/workflows/test.yml
+  push:
+    branches:
+      - master
+      - main
 
 jobs:
   unittest:

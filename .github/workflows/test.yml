@@ -4,6 +4,7 @@ on:
     paths:
       - 'sample/**'
       - .github/workflows/test.yml
+  push:
 
 jobs:
   unittest:

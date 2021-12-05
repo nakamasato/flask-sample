@@ -5,6 +5,9 @@ on:
       - 'sample/**'
       - .github/workflows/test.yml
   push:
+    branches:
+      - master
+      - main
 
 jobs:
   unittest:

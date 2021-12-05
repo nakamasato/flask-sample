@@ -1,5 +1,7 @@
 # flask sample app
 
+[![codecov](https://codecov.io/gh/nakamasato/flask-sample/branch/master/graph/badge.svg?token=07U6WH31WV)](https://codecov.io/gh/nakamasato/flask-sample)
+
 ![](diagram.drawio.svg)
 
 ## Versions

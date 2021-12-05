@@ -2,6 +2,6 @@ init:
 	pip install -r sample/requirements.txt -r tests/requirements.txt
 
 test:
-	python -m pytest
+	pytest --cov=./ --cov-report=xml
 
 .PHONY: init test

@@ -61,15 +61,16 @@
 1. Run test
 
     ```
-    python -m pytest
-    ================================================================================= test session starts ==================================================================================
+    pytest
+    ========================================================================================== test session starts ==========================================================================================
     platform darwin -- Python 3.9.0, pytest-6.2.1, py-1.10.0, pluggy-0.13.1
-    rootdir: /Users/masato-naka/repos/nakamasato/flask-test
+    rootdir: /Users/masato-naka/repos/nakamasato/flask-sample
+    plugins: cov-3.0.0
     collected 3 items
 
-    tests/test_api.py ...                                                                                                                                                            [100%]
+    tests/test_api.py ...                                                                                                                                                                             [100%]
 
-    ================================================================================== 3 passed in 0.08s ===================================================================================
+    =========================================================================================== 3 passed in 0.06s ===========================================================================================
     ```
 ### With Docker
 
@@ -85,3 +86,7 @@
     curl localhost:5000/health
     {"status":"healthy"}
     ```
+
+## Test
+
+- coverage: [codecov](https://app.codecov.io/) (https://app.codecov.io/gh/nakamasato/flask-sample)

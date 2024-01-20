@@ -4,7 +4,7 @@ coverage==6.5.0
 Flask==1.1.4
 Flask-Caching==1.11.1
 Flask-SQLAlchemy==2.4.4
-freezegun==1.1.0
+freezegun==1.4.0
 importlib-metadata==3.10.1
 iniconfig==1.1.1
 itsdangerous==2.1.2

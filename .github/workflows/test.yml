@@ -30,4 +30,4 @@ jobs:
           make init test
 
       - name: Codecov
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3

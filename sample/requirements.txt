@@ -1,5 +1,5 @@
 attrs==23.2.0
-click==7.1.2
+click==8.1.7
 coverage==7.4.0
 Flask==1.1.4
 Flask-Caching==2.1.0

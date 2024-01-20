@@ -6,7 +6,7 @@ Flask-Caching==2.1.0
 Flask-SQLAlchemy==2.4.4
 freezegun==1.4.0
 importlib-metadata==3.10.1
-iniconfig==1.1.1
+iniconfig==2.0.0
 itsdangerous==2.1.2
 Jinja2==2.11.3
 MarkupSafe==1.1.1

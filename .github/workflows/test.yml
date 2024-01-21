@@ -5,6 +5,7 @@ on:
       - poetry.lock
       - pyproject.toml
       - 'sample/**'
+      - 'docker/**'
       - .github/workflows/test.yml
   push:
     branches:

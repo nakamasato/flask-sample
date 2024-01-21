@@ -1,7 +1,7 @@
 init:
-	pip install -r sample/requirements.txt -r tests/requirements.txt
+	poetry install
 
 test:
-	pytest --cov=./ --cov-report=xml
+	poetry run pytest --cov=./ --cov-report=xml
 
 .PHONY: init test

@@ -10,6 +10,25 @@ on:
       - main
 
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+
+      - name: Install Poetry
+        uses: ./.github/actions/setup-poetry
+
+      - name: Export requirements.txt
+        run: |
+          poetry export -f requirements.txt --output requirements.txt --without-hashes
+
+      - name: check if requirements.txt is up to date
+        run: |
+          git diff --exit-code --quiet requirements.txt
+
   unittest:
     runs-on: ubuntu-latest
     steps:
@@ -21,8 +40,9 @@ jobs:
 
       - name: Set up Python
         uses: actions/setup-python@v5
-        with:
-          python-version: 3.9
+
+      - name: Install Poetry
+        uses: ./.github/actions/setup-poetry
 
       - name: Pytest
         timeout-minutes: 1

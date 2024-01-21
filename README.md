@@ -38,6 +38,12 @@
 
 ### With Local Python
 
+1. Prepare requirements.txt
+
+    ```
+    poetry export -f requirements.txt --output requirements.txt --without-hashes
+    ```
+
 1. Run MySQL
 
     ```
@@ -47,10 +53,8 @@
 1. Local env
 
     ```
-    python3 -m venv venv
-    . venv/bin/activate
-    pip install -r sample/requirements.txt
-    FLASK_APP=sample FLASK_ENV=development flask run
+    poetry install
+    FLASK_APP=sample FLASK_ENV=development poetry run flask run
     ```
 
 1. Check health
@@ -63,7 +67,7 @@
 1. Run test
 
     ```
-    pytest
+    poetry run pytest
     ========================================================================================== test session starts ==========================================================================================
     platform darwin -- Python 3.9.0, pytest-6.2.1, py-1.10.0, pluggy-0.13.1
     rootdir: /Users/masato-naka/repos/nakamasato/flask-sample

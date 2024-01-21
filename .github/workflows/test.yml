@@ -15,14 +15,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Start mysql
-        run: |
-          docker-compose -f docker/docker-compose.yml up -d mysql
-
       - name: Set up Python
         uses: actions/setup-python@v5
-        with:
-          python-version: 3.9
+
+      - name: Install Poetry
+        uses: ./.github/actions/setup-poetry
+
+      - name: Export requirements.txt
+        run: |
+          poetry export -f requirements.txt --output requirements.txt --without-hashes
+
+      - name: Check if requirements.txt is up to date
+        run: |
+          git diff --exit-code --quiet requirements.txt
+
+      - name: Start mysql
+        run: |
+          docker compose -f docker/docker-compose.yml up -d mysql --wait
 
       - name: Pytest
         timeout-minutes: 1

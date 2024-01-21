@@ -1,7 +1,7 @@
 FROM python:3.9
 RUN mkdir /var/www
 WORKDIR /var/www
-COPY sample/requirements.txt .
+COPY requirements.txt .
 RUN pip install -r requirements.txt
 COPY sample/*.py ./sample/
 COPY uwsgi.ini ./

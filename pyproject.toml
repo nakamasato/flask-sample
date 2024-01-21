@@ -32,7 +32,7 @@ toml = "0.10.2"
 tomli = "1.2.3"
 typing-extensions = "3.7.4.3"
 uwsgi = "2.0.19.1"
-werkzeug = "1.0.1"
+werkzeug = "3.0.1"
 zipp = "3.4.0"
 
 

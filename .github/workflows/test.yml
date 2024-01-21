@@ -36,6 +36,9 @@ jobs:
         run: |
           make init test
 
+      - name: Codecov
+        uses: codecov/codecov-action@v3
+
   update-requirements-txt:
     runs-on: ubuntu-latest
     steps:

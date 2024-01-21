@@ -39,7 +39,6 @@ jobs:
           make init test
 
   update-requirements-txt:
-    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -79,12 +78,12 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # used by gh
         run: |
-          echo "count=$(gh pr list -S head:${{ env.BRANCH_NAME }} -B ${{ github.event.repository.default_branch }} | wc -l)" >> "$GITHUB_OUTPUT"
+          echo "count=$(gh pr list -S head:${{ env.BRANCH_NAME }} -B ${{ github.ref_name || github.event.repository.default_branch }} | wc -l)" >> "$GITHUB_OUTPUT"
 
       - name: create pr
         if: ${{ steps.need_commit.outputs.need_commit == 'true' && steps.check_pr.outputs.count == 0 }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # used by gh
         run: |
-          gh pr create -B "${{ github.event.repository.default_branch }}" -t "chore: update requirements.txt" -b ""
+          gh pr create -B "${{ github.ref_name || github.event.repository.default_branch }}" -t "chore: update requirements.txt" -b ""
 

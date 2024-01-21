@@ -31,7 +31,7 @@ sqlalchemy = "2.0.25"
 toml = "0.10.2"
 tomli = "1.2.3"
 typing-extensions = "3.7.4.3"
-uwsgi = "2.0.19.1"
+uwsgi = "2.0.23"
 werkzeug = "3.0.1"
 zipp = "3.4.0"
 

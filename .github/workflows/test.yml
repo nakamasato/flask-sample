@@ -2,6 +2,8 @@ name: test
 on:
   pull_request:
     paths:
+      - poetry.lock
+      - pyproject.toml
       - 'sample/**'
       - .github/workflows/test.yml
   push:

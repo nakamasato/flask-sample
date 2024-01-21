@@ -29,7 +29,7 @@ services:
       - "5000:80"
 
   mysql:
-    image: mysql:8
+    image: mysql:8.0.28
     volumes:
       - ./mysql/schema/user.sql:/docker-entrypoint-initdb.d/01_schema_user.sql
       - ./mysql/data/user.sql:/docker-entrypoint-initdb.d/11_data_user.sql

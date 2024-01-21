@@ -119,9 +119,6 @@ files = [
     {file = "coverage-6.5.0.tar.gz", hash = "sha256:f642e90754ee3e06b0e7e51bce3379590e76b7f76b708e1a71ff043f87025c84"},
 ]
 
-[package.dependencies]
-tomli = {version = "*", optional = true, markers = "python_full_version <= \"3.11.0a6\" and extra == \"toml\""}
-
 [package.extras]
 toml = ["tomli"]
 
@@ -536,12 +533,12 @@ files = [
 
 [[package]]
 name = "uwsgi"
-version = "2.0.19.1"
+version = "2.0.21"
 description = "The uWSGI server"
 optional = false
 python-versions = "*"
 files = [
-    {file = "uWSGI-2.0.19.1.tar.gz", hash = "sha256:faa85e053c0b1be4d5585b0858d3a511d2cd10201802e8676060fd0a109e5869"},
+    {file = "uwsgi-2.0.21.tar.gz", hash = "sha256:35a30d83791329429bc04fe44183ce4ab512fcf6968070a7bfba42fc5a0552a9"},
 ]
 
 [[package]]
@@ -576,5 +573,5 @@ testing = ["func-timeout", "jaraco.itertools", "jaraco.test (>=3.2.0)", "pytest 
 
 [metadata]
 lock-version = "2.0"
-python-versions = "^3.9"
-content-hash = "aac1bd3e6c6f93bd2a0c718a1378b33204f67e8f2dd877bb1718b09fbd045bd1"
+python-versions = "3.11"
+content-hash = "95614587aa21b742b27d834f6c61bf1b8e571f8e8b1af885bb1a5795d4ef7e83"

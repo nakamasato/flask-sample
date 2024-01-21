@@ -5,7 +5,7 @@
 ![](diagram.drawio.svg)
 
 ## Versions
-- Python: 3.9
+- Python: 3.11
 - Flask: 1.1.2
 ## APIs
 

@@ -31,7 +31,7 @@ jobs:
 
       - name: Start mysql
         run: |
-          docker-compose -f docker/docker-compose.yml up -d mysql --wait
+          docker compose -f docker/docker-compose.yml up -d mysql --wait
 
       - name: Pytest
         timeout-minutes: 1

@@ -10,7 +10,7 @@ packages = [{include = "sample"}]
 python = "^3.9"
 attrs = "20.3.0"
 click = "7.1.2"
-coverage = "6.2"
+coverage = "6.5.0"
 flask = "1.1.4"
 flask-caching = "1.9.0"
 flask-sqlalchemy = "2.4.4"

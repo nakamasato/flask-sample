@@ -33,7 +33,6 @@ typing-extensions = "3.7.4.3"
 uwsgi = "2.0.21"
 werkzeug = "1.0.1"
 zipp = "3.4.0"
-pytest = "7.4.4"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -48,6 +47,7 @@ pytest-cov = "3.0.0"
 toml = "0.10.2"
 typing-extensions = "3.7.4.3"
 zipp = "3.4.0"
+pytest = "^7.4.4"
 
 [build-system]
 requires = ["poetry-core"]

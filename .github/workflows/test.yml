@@ -10,16 +10,10 @@ on:
       - main
 
 jobs:
-  check:
+  unittest:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-
-      - name: Install Poetry
-        uses: ./.github/actions/setup-poetry
 
       - name: Export requirements.txt
         run: |
@@ -29,20 +23,15 @@ jobs:
         run: |
           git diff --exit-code --quiet requirements.txt
 
-  unittest:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Start mysql
-        run: |
-          docker-compose -f docker/docker-compose.yml up -d mysql
-
       - name: Set up Python
         uses: actions/setup-python@v5
 
       - name: Install Poetry
         uses: ./.github/actions/setup-poetry
+
+      - name: Start mysql
+        run: |
+          docker-compose -f docker/docker-compose.yml up -d mysql --wait
 
       - name: Pytest
         timeout-minutes: 1

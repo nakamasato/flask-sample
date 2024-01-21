@@ -25,7 +25,7 @@ jobs:
         run: |
           poetry export -f requirements.txt --output requirements.txt --without-hashes
 
-      - name: check if requirements.txt is up to date
+      - name: Check if requirements.txt is up to date
         run: |
           git diff --exit-code --quiet requirements.txt
 

@@ -600,12 +600,12 @@ files = [
 
 [[package]]
 name = "uwsgi"
-version = "2.0.21"
+version = "2.0.23"
 description = "The uWSGI server"
 optional = false
 python-versions = "*"
 files = [
-    {file = "uwsgi-2.0.21.tar.gz", hash = "sha256:35a30d83791329429bc04fe44183ce4ab512fcf6968070a7bfba42fc5a0552a9"},
+    {file = "uwsgi-2.0.23.tar.gz", hash = "sha256:0cafda0c16f921db7fe42cfaf81b167cf884ee17350efbdd87d1ecece2d7de37"},
 ]
 
 [[package]]
@@ -641,4 +641,4 @@ testing = ["func-timeout", "jaraco.itertools", "jaraco.test (>=3.2.0)", "pytest 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "40901b97efa5d58d07a272c4c54f6e47912ce00140482f1b59707603f045d8ea"
+content-hash = "5b0a7271a15b3cbbbc23d91a241fa3e07c827321b6e63e3aec64f5339c04b65a"

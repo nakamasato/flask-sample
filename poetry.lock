@@ -166,13 +166,13 @@ SQLAlchemy = ">=0.8.0"
 
 [[package]]
 name = "freezegun"
-version = "1.1.0"
+version = "1.4.0"
 description = "Let your Python tests travel through time"
 optional = false
-python-versions = ">=3.5"
+python-versions = ">=3.7"
 files = [
-    {file = "freezegun-1.1.0-py2.py3-none-any.whl", hash = "sha256:2ae695f7eb96c62529f03a038461afe3c692db3465e215355e1bb4b0ab408712"},
-    {file = "freezegun-1.1.0.tar.gz", hash = "sha256:177f9dd59861d871e27a484c3332f35a6e3f5d14626f2bf91be37891f18927f3"},
+    {file = "freezegun-1.4.0-py3-none-any.whl", hash = "sha256:55e0fc3c84ebf0a96a5aa23ff8b53d70246479e9a68863f1fcac5a3e52f19dd6"},
+    {file = "freezegun-1.4.0.tar.gz", hash = "sha256:10939b0ba0ff5adaecf3b06a5c2f73071d9678e507c5eaedb23c761d56ac774b"},
 ]
 
 [package.dependencies]
@@ -641,4 +641,4 @@ testing = ["func-timeout", "jaraco.itertools", "jaraco.test (>=3.2.0)", "pytest 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "09d9251194aaedd17209ebba9653f40651f97cb58caa29e9b81b283e7bebb772"
+content-hash = "40901b97efa5d58d07a272c4c54f6e47912ce00140482f1b59707603f045d8ea"

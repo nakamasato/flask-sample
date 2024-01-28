@@ -625,20 +625,20 @@ watchdog = ["watchdog"]
 
 [[package]]
 name = "zipp"
-version = "3.4.0"
+version = "3.17.0"
 description = "Backport of pathlib-compatible object wrapper for zip files"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.8"
 files = [
-    {file = "zipp-3.4.0-py3-none-any.whl", hash = "sha256:102c24ef8f171fd729d46599845e95c7ab894a4cf45f5de11a44cc7444fb1108"},
-    {file = "zipp-3.4.0.tar.gz", hash = "sha256:ed5eee1974372595f9e416cc7bbeeb12335201d8081ca8a0743c954d4446e5cb"},
+    {file = "zipp-3.17.0-py3-none-any.whl", hash = "sha256:0e923e726174922dce09c53c59ad483ff7bbb8e572e00c7f7c46b88556409f31"},
+    {file = "zipp-3.17.0.tar.gz", hash = "sha256:84e64a1c28cf7e91ed2078bb8cc8c259cb19b76942096c8d7b84947690cabaf0"},
 ]
 
 [package.extras]
-docs = ["jaraco.packaging (>=3.2)", "rst.linker (>=1.9)", "sphinx"]
-testing = ["func-timeout", "jaraco.itertools", "jaraco.test (>=3.2.0)", "pytest (>=3.5,!=3.7.3)", "pytest-black (>=0.3.7)", "pytest-checkdocs (>=1.2.3)", "pytest-cov", "pytest-flake8", "pytest-mypy"]
+docs = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "rst.linker (>=1.9)", "sphinx (<7.2.5)", "sphinx (>=3.5)", "sphinx-lint"]
+testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "pytest (>=6)", "pytest-black (>=0.3.7)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-ignore-flaky", "pytest-mypy (>=0.9.1)", "pytest-ruff"]
 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "5b0a7271a15b3cbbbc23d91a241fa3e07c827321b6e63e3aec64f5339c04b65a"
+content-hash = "74d34072fce116d784160503abfecf0615dd816c01c4d80abab71f7be02f7193"

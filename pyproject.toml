@@ -9,7 +9,7 @@ packages = [{include = "sample"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 attrs = "20.3.0"
-click = "7.1.2"
+click = "8.1.7"
 coverage = "6.5.0"
 flask = "1.1.4"
 flask-caching = "1.11.1"

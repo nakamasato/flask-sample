@@ -400,13 +400,13 @@ testing = ["pytest", "pytest-benchmark"]
 
 [[package]]
 name = "pymysql"
-version = "0.10.1"
+version = "1.1.0"
 description = "Pure Python MySQL Driver"
 optional = false
-python-versions = "*"
+python-versions = ">=3.7"
 files = [
-    {file = "PyMySQL-0.10.1-py2.py3-none-any.whl", hash = "sha256:44f47128dda8676e021c8d2dbb49a82be9e4ab158b9f03e897152a3a287c69ea"},
-    {file = "PyMySQL-0.10.1.tar.gz", hash = "sha256:263040d2779a3b84930f7ac9da5132be0fefcd6f453a885756656103f8ee1fdd"},
+    {file = "PyMySQL-1.1.0-py3-none-any.whl", hash = "sha256:8969ec6d763c856f7073c4c64662882675702efcb114b4bcbb955aea3a069fa7"},
+    {file = "PyMySQL-1.1.0.tar.gz", hash = "sha256:4f13a7df8bf36a51e81dd9f3605fede45a4878fe02f9236349fd82a3f0612f96"},
 ]
 
 [package.extras]
@@ -645,4 +645,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "fc16a3c7d047f5ce950cb30699836483553a8bc794c0b402ecbf5f2b3fea1302"
+content-hash = "5fb250b237c934c6ca01c913f9c933058dfdc0affce5e1f0d96b61191a6af265"

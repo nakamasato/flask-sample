@@ -39,7 +39,7 @@ jobs:
           make init test
 
       - name: Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
 
   update-requirements-txt:
     if: github.event_name == 'schedule'

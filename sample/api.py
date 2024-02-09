@@ -1,5 +1,6 @@
 from flask import jsonify
 from sqlalchemy import select
+
 from sample.cache import cache
 from sample.db import db_session
 from sample.models import User

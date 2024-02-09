@@ -21,7 +21,7 @@ def healthcheck():
 @cache.memoize(timeout=10)
 def get_user(user_id):
     try:
-        user = db_session.query(User).get(user_id)
+        user = db_session.get(User, user_id)
 
         return make_response(user)
     except Exception as e:

@@ -1,5 +1,5 @@
 from flask import jsonify
-
+from sqlalchemy import select
 from sample.cache import cache
 from sample.db import db_session
 from sample.models import User
@@ -10,7 +10,7 @@ NUM_OF_POSTS_TO_RETURN = 10
 
 def healthcheck():
     try:
-        db_session.execute("SELECT 1")
+        db_session.execute(select(1))
         return jsonify({"status": "healthy"}), 200
     except Exception as e:
         print(f"db health check failed: {e}")
@@ -20,7 +20,7 @@ def healthcheck():
 @cache.memoize(timeout=10)
 def get_user(user_id):
     try:
-        user = User.query.get(user_id)
+        user = db_session.query(User).get(user_id)
 
         return make_response(user)
     except Exception as e:

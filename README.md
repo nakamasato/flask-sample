@@ -5,8 +5,8 @@
 ![](diagram.drawio.svg)
 
 ## Versions
-- Python: 3.11
-- Flask: 1.1.2
+- Python: 3.12
+- Flask: 1.7.1
 ## APIs
 
 1. GET /health

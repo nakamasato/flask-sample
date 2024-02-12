@@ -9,6 +9,7 @@
     "enabled": true
   },
   "ignorePaths": [
-    "requirements.txt"
+    "requirements.txt",
+    ".tool-versions"
   ]
 }

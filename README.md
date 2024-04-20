@@ -6,7 +6,7 @@
 
 ## Versions
 - Python: 3.12
-- Flask: 1.7.1
+- Flask: 3.0.3
 ## APIs
 
 1. GET /health

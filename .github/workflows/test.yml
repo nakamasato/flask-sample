@@ -1,23 +1,45 @@
 name: test
 on:
   pull_request:
-    paths:
-      - poetry.lock
-      - pyproject.toml
-      - 'sample/**'
-      - 'docker/**'
-      - .github/workflows/test.yml
   push:
     branches:
       - main
-  schedule:
-    - cron: '30 5 * * *'
-
-env:
-  BRANCH_NAME: update-requirements-txt
 
 jobs:
+  path-filter:
+    outputs:
+      test: ${{steps.changes.outputs.test}}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # v3.0.2
+        id: changes
+        with:
+          filters: |
+            test:
+              - poetry.lock
+              - pyproject.toml
+              - 'sample/**'
+              - 'docker/**'
+              - .github/workflows/test.yml
+
+  status-check-test:
+    # This job is used for the branch's branch protection rule's status check.
+    # If all dependent jobs succeed or are skipped this job succeeds.
+    runs-on: ubuntu-latest
+    needs:
+      - unittest
+    permissions: {}
+    if: failure()
+    steps:
+      - run: exit 1
+
   unittest:
+    if: needs.path-filter.outputs.test == 'true'
+    needs: path-filter
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -40,55 +62,3 @@ jobs:
 
       - name: Codecov
         uses: codecov/codecov-action@v4
-
-  update-requirements-txt:
-    if: github.event_name == 'schedule'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Install Poetry
-        uses: ./.github/actions/setup-poetry
-
-      - name: Export requirements.txt
-        run: |
-          poetry export -f requirements.txt --output requirements.txt --without-hashes
-
-      - name: check if need to commit
-        id: need_commit
-        run: |
-          if [[ -n "$(git status --porcelain)" ]]; then
-            echo "need_commit=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "need_commit=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: commit and push
-        if: steps.need_commit.outputs.need_commit == 'true'
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git checkout -b ${{ env.BRANCH_NAME }}
-          git add .
-          git commit -m 'update requirements.txt'
-          git push -u origin HEAD -f
-
-      - name: check if pr exists
-        id: check_pr
-        if: steps.need_commit.outputs.need_commit == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # used by gh
-          SOURCE_BRANCH: ${{ github.event.pull_request.head.ref || github.event.repository.default_branch }}
-        run: |
-          echo "count=$(gh pr list -S head:${{ env.BRANCH_NAME }} -B ${{ env.SOURCE_BRANCH }} | wc -l)" >> "$GITHUB_OUTPUT"
-
-      - name: create pr
-        if: ${{ steps.need_commit.outputs.need_commit == 'true' && steps.check_pr.outputs.count == 0 }}
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # used by gh
-          SOURCE_BRANCH: ${{ github.event.pull_request.head.ref || github.event.repository.default_branch }}
-        run: |
-          pr_link="$(gh pr create -B "${{ env. SOURCE_BRANCH }}" -t "chore: update requirements.txt" -b "")"
-          gh pr comment "${{ github.event.pull_request.number }}" -b "Please merge $pr_link to update requirements.txt."
-          exit 1
-

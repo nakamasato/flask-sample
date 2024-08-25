@@ -457,13 +457,13 @@ rsa = ["cryptography"]
 
 [[package]]
 name = "pyparsing"
-version = "3.1.3"
+version = "3.1.4"
 description = "pyparsing module - Classes and methods to define and execute parsing grammars"
 optional = false
 python-versions = ">=3.6.8"
 files = [
-    {file = "pyparsing-3.1.3-py3-none-any.whl", hash = "sha256:1e80fdf93e6c1aeaf4702523f1d48f66d52fa6459096a8f812591157270a5896"},
-    {file = "pyparsing-3.1.3.tar.gz", hash = "sha256:5d549d2a1b5e1c3e952bb55ea247bfb5ad427ea307566a350db2b3c34d4ce181"},
+    {file = "pyparsing-3.1.4-py3-none-any.whl", hash = "sha256:a6a7ee4235a3f944aa1fa2249307708f893fe5717dc603503c6c7969c070fb7c"},
+    {file = "pyparsing-3.1.4.tar.gz", hash = "sha256:f86ec8d1a83f11977c9a6ea7598e8c27fc5cddfa5b07ea2241edbbde1d7bc032"},
 ]
 
 [package.extras]
@@ -697,4 +697,4 @@ test = ["big-O", "importlib-resources", "jaraco.functools", "jaraco.itertools", 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "940204ef80557279253829213078707c6e2c8d39ef1048636472ac8fb8176a05"
+content-hash = "029d2156546975d7cf9e6985881e897de57be1b7dbbd9fe047644b8d1329b988"

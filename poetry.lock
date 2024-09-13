@@ -685,13 +685,13 @@ watchdog = ["watchdog (>=2.3)"]
 
 [[package]]
 name = "zipp"
-version = "3.20.1"
+version = "3.20.2"
 description = "Backport of pathlib-compatible object wrapper for zip files"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "zipp-3.20.1-py3-none-any.whl", hash = "sha256:9960cd8967c8f85a56f920d5d507274e74f9ff813a0ab8889a5b5be2daf44064"},
-    {file = "zipp-3.20.1.tar.gz", hash = "sha256:c22b14cc4763c5a5b04134207736c107db42e9d3ef2d9779d465f5f1bcba572b"},
+    {file = "zipp-3.20.2-py3-none-any.whl", hash = "sha256:a817ac80d6cf4b23bf7f2828b7cabf326f15a001bea8b1f9b49631780ba28350"},
+    {file = "zipp-3.20.2.tar.gz", hash = "sha256:bc9eb26f4506fda01b81bcde0ca78103b6e62f991b381fec825435c836edbc29"},
 ]
 
 [package.extras]
@@ -705,4 +705,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "e4772244bab7ae258f442483c4d1d6a64c9180ac5547fb3509a98f4a3962b070"
+content-hash = "05c0a8cbef2096bab35f8348967d5dde4d16fc4ae4e05a57db6507fa1c077aa7"

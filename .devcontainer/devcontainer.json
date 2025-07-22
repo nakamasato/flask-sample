@@ -1,0 +1,13 @@
+{
+	"name": "Python 3",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "devcontainer",
+	"workspaceFolder": "/workspaces/flask-sample",
+	"features": {
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {},
+		"ghcr.io/devcontainers-extra/features/poetry:2": {}
+	},
+	"remoteUser": "vscode",
+	"containerUser": "vscode"
+}

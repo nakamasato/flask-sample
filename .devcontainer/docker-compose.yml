@@ -1,0 +1,32 @@
+services:
+  devcontainer:
+    image: "mcr.microsoft.com/devcontainers/python:1-3.12-bullseye"
+    volumes:
+      - ../..:/workspaces:cached
+    env_file:
+      - ../docker/env_file/env.app
+      - ../docker/env_file/env.mysql
+    command: sleep infinity
+    ports:
+      - 8000:5000
+
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    volumes:
+      - db_data:/var/lib/mysql
+      - ../docker/mysql/schema/user.sql:/docker-entrypoint-initdb.d/01_schema_user.sql
+      - ../docker/mysql/data/user.sql:/docker-entrypoint-initdb.d/11_data_user.sql
+      - ../docker/mysql/conf.d/:/etc/mysql/conf.d/
+    env_file:
+      - ../docker/env_file/env.mysql
+    ports:
+      - 3306:3306
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  db_data:

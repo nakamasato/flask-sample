@@ -57,6 +57,8 @@
     FLASK_APP=sample FLASK_ENV=development poetry run flask run
     ```
 
+    Devcontainerを使う場合は、 `--host=0.0.0.0`をつける
+
 1. Check health
 
     ```

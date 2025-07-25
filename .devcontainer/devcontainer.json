@@ -16,6 +16,7 @@
 			]
 		}
 	},
+	"initializeCommand": ".devcontainer/init.sh",
 	"postStartCommand": ".devcontainer/post-start.sh",
 	"remoteUser": "vscode",
 	"containerUser": "vscode"

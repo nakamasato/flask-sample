@@ -6,8 +6,17 @@
 	"features": {
 		"ghcr.io/devcontainers/features/github-cli:1": {},
 		"ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {},
-		"ghcr.io/devcontainers-extra/features/poetry:2": {}
+		"ghcr.io/devcontainers-extra/features/poetry:2": {},
+		"ghcr.io/devcontainers-extra/features/pre-commit:2": {}
 	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"shd101wyy.markdown-preview-enhanced"
+			]
+		}
+	},
+	"postStartCommand": ".devcontainer/post-start.sh",
 	"remoteUser": "vscode",
 	"containerUser": "vscode"
 }

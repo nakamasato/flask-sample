@@ -4,4 +4,4 @@ Makefile
 .github
 .pytest_cache
 docker
-venv
+.venv

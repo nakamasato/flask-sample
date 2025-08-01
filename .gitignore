@@ -7,3 +7,4 @@ venv
 *.log
 coverage.xml
 .venv
+.env.devcontainer

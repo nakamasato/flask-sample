@@ -9,7 +9,7 @@ packages = [{include = "sample"}]
 [tool.poetry.dependencies]
 python = "^3.12"
 attrs = "25.3.0"
-coverage = "7.10.3"
+coverage = "7.10.4"
 freezegun = "1.5.5"
 importlib-metadata = "8.7.0"
 iniconfig = "2.1.0"

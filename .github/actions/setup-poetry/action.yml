@@ -11,7 +11,7 @@ runs:
   steps:
     - id: setup-python
       name: Set up Python
-      uses: actions/setup-python@v5 # version is determined by .python-version
+      uses: actions/setup-python@v6 # version is determined by .python-version
 
     - name: Load cached Poetry installation
       id: cached-poetry

@@ -560,13 +560,13 @@ windows-terminal = ["colorama (>=0.4.6)"]
 
 [[package]]
 name = "pymysql"
-version = "1.2.0"
+version = "1.2.2"
 description = "Pure Python MySQL Driver"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "pymysql-1.2.0-py3-none-any.whl", hash = "sha256:62169ce6d5510f08e140c5e7990ee884a9764024e4a9a27b2cc11f1099322ae0"},
-    {file = "pymysql-1.2.0.tar.gz", hash = "sha256:6c7b17ca686988104d7426c27895b455cdeea3e9d3ceb1270f0c3704fead8c33"},
+    {file = "pymysql-1.2.2-py3-none-any.whl", hash = "sha256:22314b466986ce23831dae89e980950db730291384ba3201da9a0a8177c295be"},
+    {file = "pymysql-1.2.2.tar.gz", hash = "sha256:26b81847ae4a6c0aace8bfd1575774d8e247957b46691550acd7c33084f96123"},
 ]
 
 [package.extras]

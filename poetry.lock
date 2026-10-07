@@ -383,13 +383,13 @@ type = ["pytest-mypy (>=1.0.1)"]
 
 [[package]]
 name = "iniconfig"
-version = "2.3.0"
+version = "2.3.1"
 description = "brain-dead simple config-ini parsing"
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "iniconfig-2.3.0-py3-none-any.whl", hash = "sha256:f631c04d2c48c52b84d0d0549c99ff3859c98df65b3101406327ecc7d53fbf12"},
-    {file = "iniconfig-2.3.0.tar.gz", hash = "sha256:c76315c77db068650d49c5b56314774a7804df16fee4402c1f19d6d15d8c4730"},
+    {file = "iniconfig-2.3.1-py3-none-any.whl", hash = "sha256:9121e2c1fdb355232495be3194c8dfe87ccc2d5dee45947b78e68f499790d7a7"},
+    {file = "iniconfig-2.3.1.tar.gz", hash = "sha256:67f4b9c50da0dedf52af349e7749a80a9057a5031199791b906c3bb3ae878960"},
 ]
 
 [[package]]
@@ -869,4 +869,4 @@ type = ["pytest-mypy (>=1.0.1)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "77f4eaac0eb70facab4a9311652e2bb304a532d95da2bc8ecc32304a38d0efd6"
+content-hash = "b3f3a8932e4b03bb6f25ae91e1b494ab5db4ac86107a4b6d984462f82f9f80b0"

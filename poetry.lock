@@ -355,13 +355,13 @@ test = ["objgraph", "psutil", "setuptools"]
 
 [[package]]
 name = "importlib-metadata"
-version = "10.0.0"
+version = "10.1.0"
 description = "Read metadata from Python packages"
 optional = false
 python-versions = ">=3.11"
 files = [
-    {file = "importlib_metadata-10.0.0-py3-none-any.whl", hash = "sha256:f67190d5118594547064b8eb474d67df935a3fa6a2e601917bb5f107a95b50d3"},
-    {file = "importlib_metadata-10.0.0.tar.gz", hash = "sha256:91f91d04082e49e99df91762a6571ad65a56dabf876b860e668ffa107eaf1a98"},
+    {file = "importlib_metadata-10.1.0-py3-none-any.whl", hash = "sha256:cf45ce66a929c64e994185a809c04840d0501db17e663810d993d0f4829265c7"},
+    {file = "importlib_metadata-10.1.0.tar.gz", hash = "sha256:82b04047fa09792c1a8cfeddfe08bec79e4b13c29c8469b0d3949860f61017e8"},
 ]
 
 [package.dependencies]
@@ -890,4 +890,4 @@ type = ["pytest-mypy (>=1.0.1)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "ad33067aa12cb1e0357cd75ce5e71bb444d6a89f8e8a54322bb518f5c9ccfdbc"
+content-hash = "25e2e41a40c4e8e7adda5970066e4652602a42c5f658cb7dee8a136370a78765"

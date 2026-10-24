@@ -1,4 +1,4 @@
-FROM python:3.13
+FROM python:3.15
 RUN mkdir /var/www
 WORKDIR /var/www
 COPY requirements.txt .
